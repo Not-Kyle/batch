@@ -14,6 +14,7 @@
      > I wanted to create Minecraft hacks and found out Javascript has nothing to do with Java <br />
    * C <br />
     > I dropped C two years ago realizing I had no use for C as I don't code anything using C <br />
+    > I don't have a use for C <br />
    * Java <br />
     > I am still learning Java as of today April 15 2024, as I would love to go into Minecraft Clients <br />
    * Lua / Luau <br />
