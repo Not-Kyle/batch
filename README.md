@@ -10,7 +10,7 @@
 
   I have learned a few languages and have not used many of them here are my reasons <br />
 
-   ==Javascript== <br />
+   *  ==Javascript== <br />
      > I recently dropped learning Javascript a year ago after getting mixed up with Java <br />
      > I wanted to create Minecraft hacks and found out Javascript has nothing to do with Java <br />
    * C <br />
