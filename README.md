@@ -4,3 +4,4 @@
   * C <br />
   * Java <br />
   * Lua/Luau <br />
+# So here is a collection of all things random from those langauges!
