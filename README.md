@@ -30,3 +30,17 @@
   
    * Java <br />
      > I'd enjoy to master Java as its a very object oriented language <br />
+     > Java has a ton of uses as its used in games, malicious uses,and other sorts <br />
+   * C / C# / C++ <br />
+     > C is the mother of all languages, its the goddess of the entire computer software Windows <br />
+     > C++ is a very simplistic language to learn and has a ton of different uses like making programs, client hacks, and games <br />
+   * Python <br />
+     > Python is very simplistic to master and one of the easiest languages to learn <br />
+     > Python is not good for making games but is fantastic for linux usage <br />
+     > It's also created in C making it slower than your typical coding language <br />
+   * Javascript <br />
+     > I've done Javascript in the past and quit because I got back into Lua <br />
+     > Javascript is the best language out there probably as it handles almost everything (websites, data, ethical hacking, etc) <br />
+     > If you master Javascript you can also have a large chance in getting a very high paying job 120K and up <br />
+
+    
