@@ -5,11 +5,11 @@
   * Java <br />
   * Lua/Luau <br />
   * Markdown <br />
-  <br />
+
  So here is a collection of all things random from those langauges! <br />
-<br />
+
   I have learned a few languages and have not used many of them here are my reasons <br />
-<br />
+
    * Javascript <br />
      > I recently dropped learning Javascript a year ago after getting mixed up with Java <br /> 
      > I wanted to create Minecraft hacks and found out Javascript has nothing to do with Java <br />
@@ -23,10 +23,10 @@
      > I have not mastered Luau yet, but I'm good at it <br />
    * Markdown <br />
      > I only use this for github, but it's got to be one of the easiest languages to master <br />
-<br />
+
 # Languages I want to master! <br />
  I've seen alot of useful and interesting stuff in a bunch of various languages <br />
   These languages are typically used someway in, linux, windows, exploits, mods, malicious services or other random ideas I'd love to feed my brain <br />
-   <br />
+  
    * Java <br />
      > I'd enjoy to master Java as its a very object oriented language <br />
