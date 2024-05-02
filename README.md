@@ -5,6 +5,7 @@
   * Java <br />
   * Lua/Luau <br />
   * Markdown <br />
+  * Python <br />
 
  So here is a collection of all things random from those langauges! <br />
 
@@ -23,7 +24,9 @@
      > I have not mastered Luau yet, but I'm good at it <br />
    * Markdown <br />
      > I only use this for github, but it's got to be one of the easiest languages to master <br />
-
+   * Python <br />
+     > I just recently started to learn Python, it's just a way to pass time for me as we all know Python is the easiest language to learn <br />
+     > I've decided to also learn Python just because of its simplistic nature and usefulness <br />
 # Languages I want to master! <br />
  I've seen alot of useful and interesting stuff in a bunch of various languages <br />
   These languages are typically used someway in, linux, windows, exploits, mods, malicious services or other random ideas I'd love to feed my brain <br />
