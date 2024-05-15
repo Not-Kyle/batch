@@ -21,7 +21,7 @@
      > I am still learning Java as of today April 15 2024, as I would love to go into Minecraft Clients <br />
    * Lua / Luau <br />
      > I am still learning new things of Luau everyday, as of recently I still need to learn most of Synapse X functions <br />
-     > Synapse X functions like Bit, Crypt, and Debug <br />
+     > Synapse X functions like Bit, Crypt <br />
      > I have not mastered Luau yet, but I'm good at it <br />
    * Markdown <br />
      > I only use this for github, but it's got to be one of the easiest languages to master <br />
