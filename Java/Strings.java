@@ -11,7 +11,7 @@ public class writeage {
      
     if (not) {
       
-      System.out.println(newclosure + real);
+      System.out.println(newcclosure + real);
     
     }
   
