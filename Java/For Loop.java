@@ -12,7 +12,7 @@ public class test {
     public static void other(String[] args) {
         for (i = 0; i < 6; i++) {
             A a=new A(); 
-            System.out.println(a.random); //going to print Hi six times
+            System.out.println(a.random); //going to print nothing since it can not define the private keyword in line two
         }
     }
 }
