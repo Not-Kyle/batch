@@ -10,7 +10,7 @@ public class test {
         }
     }
     public static void other(String[] args) {
-        for (i = 0; i < 3; i++) {
+        for (i = 0; i < 6; i++) {
             A a=new A();
             System.out.println(a.random);
         }
