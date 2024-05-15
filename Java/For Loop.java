@@ -6,13 +6,13 @@ public class test {
         byte = 1;
         char = 'g';
         for (;i < 2;) {
-            System.out.println(char + byte);
+            System.out.println(char + byte); // going to print g1 two times
         }
     }
     public static void other(String[] args) {
         for (i = 0; i < 6; i++) {
-            A a=new A();
-            System.out.println(a.random);
+            A a=new A(); 
+            System.out.println(a.random); //going to print Hi six times
         }
     }
 }
