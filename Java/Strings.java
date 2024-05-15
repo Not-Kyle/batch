@@ -39,4 +39,13 @@ public class Main {
             System.out.println("null"); //just for fun, idk how to do (return nil) in java yet, but its null and not nil
         }
     }
+    public static void more(String[] args) {
+        String s4 = "Cory";
+        String s5 = "Aurora";
+        if (s4 != s5) {
+            System.out.println(s4.concat(s5)); // concat is used to chain two strings together
+        } else {
+            System.out.println("null");
+        }
+    }
 }
