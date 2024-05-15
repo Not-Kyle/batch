@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         double m1 = 21492340;
         int m2 = 4930;
-        char m3 = "d";
+        char m3 = 'd';
         boolean m4 = true;
         do {
             System.out.println(m1 + m2 + m3);
