@@ -16,5 +16,8 @@ public class writeage {
     }
   
   }
-
+ public static void other(String[] args) {
+  final int num = 4; // use the keyword Final to make a variable unchangable and read only
+  System.out.println(num);
+ }
 }
