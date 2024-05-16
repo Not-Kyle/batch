@@ -9,7 +9,7 @@ public class test {
             System.out.println(g + r); //going to print g1 two times
         }
     }
-    public static void other(String[] args) {
+    public static void other() {
         for (i = 0; i < 6; i++) {
             A a=new A(); 
             System.out.println(a.random); //going to print nothing since it can not define the private keyword in line two
@@ -20,10 +20,10 @@ public class test {
 // Add-ons (May 16, 2024)
 public class b {
    public static void extra() {
-      for (int x = 3; x < 7; x++) {
+      for (int x = 3; x < 7; x++) { //a for loop
          System.out.println(x)
          for (short y = 4; y < 7; y++) {
-            System.out.println(y);
+            System.out.println(y); //a nested for loop
          }
       }
    }
