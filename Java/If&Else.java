@@ -21,4 +21,12 @@ public class Test {
             System.out.println("null");
         }
     }
+    public static void others(String[] args) {
+        if (y % 2 == 0) {
+            System.out.println(y + " even");
+        } else {
+            System.out.println(y + " odd");
+        }
+    }
 }
+
