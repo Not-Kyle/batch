@@ -25,7 +25,7 @@ public class Main {
     public static void other(String[] args) {
         String s2 = "Find setmetatable in my script";
         boolean b1 = true;
-        if b1 {
+        if (b1) {
             System.out.println(s2.toUpperCase()); // makes it completely uppercase
             System.out.println(s2.toLowerCase()); // makes it completely lowercase
         }
@@ -33,7 +33,7 @@ public class Main {
     public static void others(String[] args) {
         String s3 = "Find newcclosure in my script";
         boolean b2 = true;
-        if b2 {
+        if (b2) {
             System.out.println("My string is " + s3.length() + " characters long"); // tells me the length of the string
         } else {
             System.out.println("null"); //just for fun, idk how to do (return nil) in java yet, but its null and not nil
