@@ -12,8 +12,10 @@ public class arrays {
   }
 }
 
-// Add-ons (May 17, 2024)
-// For-Each loop
+/**
+Add-ons (May 17, 2024)
+For-Each loop
+*/
 public class A {
   public static void main(String[] args) {
      String[] File = {"batch", "7z", "AES-256", "exe", "Hash"};
