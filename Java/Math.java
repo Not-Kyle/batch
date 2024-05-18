@@ -6,9 +6,11 @@ public class Main {
     System.out.println(Math.min(0.1,5); // Prints the minimum number
   }
 }
-// ** PERSONAL COMMENTS **
-// Q: Why is this useful
-// A: Lets say you have a command for a speed, this command using the Math.max will tell you the highest speed you can go
+/**
+PERSONAL COMMENTS
+Q: Why is this useful
+A: Lets say you have a command for a speed, this command using the Math.max will tell you the highest speed you can go
+**/
 public class Aura {
   public static void others(String[] args) {
     int i1 = 16;
