@@ -12,7 +12,7 @@ public class arrays {
   }
 }
 
-/**
+/*
 Add-ons (May 17, 2024)
 For-Each loop
 */
@@ -24,3 +24,27 @@ public class A {
      }
    }
 }
+
+/*
+Add-ons (May 19, 2024)
+*/
+
+public class B {
+    public static void main(String[] args) {
+        String[] Settings = {"Velocity", "Speed", "Movement", "Range", "Rotation"};
+        for (short x = 0; x < Settings.length; x++) {
+            System.out.println(Settings[x]); // Prints out all of the properties
+        }
+    }
+    public static void yes() {
+        int[] Stats = {7, 10, 3, 11, 6};
+        for (int y : Stats) { // This is a For-Each loop
+            System.out.println(y); // Prints out all of the properties
+        }
+    }
+    public static void yay{} {
+        int[][] Criteria = { {7, 10, 3, 11, 6}, {2, 3, 4, 2} };
+        System.out.println(Criteria[2][1]); // Going to print out 3, First Number is the row, second number is the location
+    }
+}
+
