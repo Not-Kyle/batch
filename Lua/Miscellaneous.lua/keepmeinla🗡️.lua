@@ -104,7 +104,7 @@ local FovCircle = Drawing.new('Circle')
 
 FovCircle.Visible = false
 FovCircle.Filled = false
-FovCircleTransparency = 1
+FovCircle.Transparency = 1
 FovCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y /2)
 
 -- Tables --
