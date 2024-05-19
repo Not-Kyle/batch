@@ -2,7 +2,7 @@ public class B {
    public static void main(String[] args) {
       for (short Maps = 0; Maps < 10; Maps++) {
          if (Maps = 10) {
-            break; //Stops the loop when the variable is equal to 10
+            break; // Stops the loop when the variable is equal to 10
          }
        System.out.println(Maps);
       }
@@ -30,12 +30,12 @@ public class A {
    }
    public static void more() {
       float Speed = 4.87f;
-      int M1 = (int) Speed; //Narrow Casting
+      int M1 = (int) Speed; // Narrow Casting
       while (M1 < 6) {
          System.out.println(M1);
          M1++
          if (M1 == 6) {
-            continue; //Skips over six
+            continue; // Skips over six
          }
       }
    }
