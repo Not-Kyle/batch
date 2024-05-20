@@ -21,7 +21,7 @@ public class Water {
         System.out.println(x + y);
     }
     public static void main(String[] args) {
-        String Dot = "."
+        String Dot = ".";
         String s1 = Dot + "request";
         String s2 = Dot + "protect_gui";
         hookfunction(s1); // Prints syn.request
