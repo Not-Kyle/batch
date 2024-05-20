@@ -1,11 +1,11 @@
 public class Main {
-   static void hook() { // Function called hook()
+   static void Hook() { // Function called hook()
       int x = 5;
       float y = (float) x;
       System.out.println(y);
    }
    public static void main(String[] args) {
-      hook(); // Calling the function
+      Hook(); // Calling the function
    }
 }
 /*
@@ -28,5 +28,28 @@ public class Water {
         hookfunction(s2); // Prints syn.protect_gui
         //
         Command("Cory, ", 18); // Prints Cory 18
+    }
+}
+// Add-ons
+public class Func {
+    boolean Access = false;
+
+    static void AdminCheck(String Perms) {
+        String[] Names = {"Cory", "Aurora", "hellokittysouljia"};
+        if (Perms == Names[0] || Perms == Names[1] || Perms == Names[2]) {
+            Access = true;
+        } else {
+            Access = false;
+        }
+    }
+    public static void main(String[] args) {
+        AdminCheck();
+        if (Access == true) {
+            System.out.println("Access!");
+        } elseif (Access == false) {
+            System.out.println("Denied!")
+        } else {
+            return null;
+        }
     }
 }
