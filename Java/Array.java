@@ -29,22 +29,26 @@ public class A {
 Add-ons (May 19, 2024)
 */
 
-public class B {
-    public static void main(String[] args) {
-        String[] Settings = {"Velocity", "Speed", "Movement", "Range", "Rotation"};
-        for (short x = 0; x < Settings.length; x++) {
-            System.out.println(Settings[x]); // Prints out all of the properties
-        }
-    }
-    public static void yes() {
+public class Func {
+	static void One() {
         int[] Stats = {7, 10, 3, 11, 6};
         for (int y : Stats) { // This is a For-Each loop
             System.out.println(y); // Prints out all of the properties
         }
     }
-    public static void yay{} {
+
+    static void Two() {
         int[][] Criteria = { {7, 10, 3, 11, 6}, {2, 3, 4, 2} };
-        System.out.println(Criteria[2][1]); // Going to print out 3, First Number is the row, second number is the location
+        System.out.println(Criteria[1][1]); // Going to print out 3, First Number is the row, second number is the location
+    }
+
+	public static void main(String[] args) {
+        String[] Settings = {"Velocity", "Speed", "Movement", "Range", "Rotation"};
+        for (short x = 0; x < Settings.length; x++) {
+            System.out.println(Settings[x]); // Prints out all of the properties
+        }
+
+        One();
+        Two();
     }
 }
-
