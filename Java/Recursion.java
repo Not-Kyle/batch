@@ -5,7 +5,7 @@ public class Func {
   }
   public static int sematary(int start) {
     if (start > 0) {
-      return start + sematary(start - 1);
+      return start + sematary(start - 1); // Change the plus to any symbol (*, %, /, +, -, etc)
     } else {
       return 0;
     }
