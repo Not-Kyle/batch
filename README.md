@@ -30,6 +30,8 @@
      > I've decided to also learn Python just because of its simplistic nature and usefulness <br />
    * HTML <br />
      > I only use HTML for my readmes <br />
+   * C++ <br />
+    > I've currently paused my learning on Java and have started C++, I want to make programs for hacks and most of them use C++ <br />
 # Languages I want to master! <br />
  I've seen alot of useful and interesting stuff in a bunch of various languages <br />
   These languages are typically used someway in, linux, windows, exploits, mods, malicious services or other random ideas I'd love to feed my brain <br />
