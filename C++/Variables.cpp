@@ -19,3 +19,22 @@ int main(){
     Age = 17; // Age is now 17, Variables are changable
     std::cout << Age;
 }
+
+// -- > One Value to Many < -- \\ 
+
+#include <iostream>
+
+int main(){
+    bool W, A, S, D;
+    W = A = S = D = true;
+    std::cout << W << std::endl << A << std::endl << S << std::endl << D;
+}
+
+// -- > Many Valiables < -- \\
+
+#include <iostream>
+
+int main(){
+    double X = 9.2, Y = 13.7, Z = 50.4;
+    std::cout << X << std::endl << Y << std::endl << Z;
+}
