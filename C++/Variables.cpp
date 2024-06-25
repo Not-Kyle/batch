@@ -1,3 +1,10 @@
+// int : stores any whole number
+// float : stores numbers up to 7 decimal points
+// double : stores numbers up to 15 decimal points
+// bool : boolean
+// char : stores a character/letter
+// string : string
+
 #include <iostream>
 
 int main(){
