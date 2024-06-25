@@ -6,6 +6,7 @@
 // string : string
 
 #include <iostream>
+#include <string>
 
 int main(){
     int Age = 18;
