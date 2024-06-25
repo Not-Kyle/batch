@@ -19,7 +19,7 @@ int main(){
   return 0;
 }
 
-// -- > endl must be used with 'using namespace std' < -- \\
+// -- > endl must be used with 'using namespace std or std::endl' < -- \\
 
 // -- > Space statements out like the tab key < -- \\
 
