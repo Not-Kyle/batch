@@ -16,6 +16,6 @@ int main(){
     bool Reloading = false;
     std::cout << Reloading;
 
-    Age = 17;
+    Age = 17; // Age is now 17, Variables are changable
     std::cout << Age;
 }
