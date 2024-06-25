@@ -40,12 +40,24 @@
 
 // OR
 
-#include <iostream>
-#include <string>
-using namespace std;
+    #include <iostream>
+    #include <string>
+    using namespace std;
+    
+    int main() {
+        string X = "THREE";
+        cout << "CMD: " << X << endl << X.size();
+        return 0;
+    }
 
-int main() {
-    string X = "THREE";
-    cout << "CMD: " << X << endl << X.size();
-    return 0;
-}
+// -- > Access < -- \\
+
+    #include <iostream>
+    #include <string>
+    using namespace std;
+    
+    int main() {
+        string X = "THREE";
+        cout << "CMD: " << X << endl << X[0]; // Prints out the first letter of the string
+        return 0;
+    }
