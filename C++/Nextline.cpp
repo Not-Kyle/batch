@@ -19,7 +19,14 @@ int main(){
   return 0;
 }
 
-// -- > endl must be used with 'using namespace std or std::endl' < -- \\
+// OR
+
+#include <iostream>
+
+int main(){
+  std::cout << "Yes" << std::endl;
+  std::cout << "No"; return 0;
+}
 
 // -- > Space statements out like the tab key < -- \\
 
