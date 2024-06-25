@@ -20,3 +20,14 @@ int main(){
 }
 
 // -- > endl must be used with 'using namespace std' < -- \\
+
+// -- > Space statements out like the tab key < -- \\
+
+#include <iostream>
+
+int main(){
+  std::cout << "Yes\t";
+  std::cout << "No";
+  return 0;
+}
+// Output: Yes  No
