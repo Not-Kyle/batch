@@ -111,3 +111,17 @@
         cout << "CMD: " << X.at(1); // Outputs H
         return 0;
     }
+
+// -- > C-STYLE < -- \\
+
+    #include <iostream>
+    #include <string>
+    using namespace std;
+    
+    int main() {
+    	char debug[] = "Yes"; // An Array of characters;
+    	cout << debug;
+    	return 0;
+    }
+
+// The purpose of C-style strings is to use functions from the C-standard string library
