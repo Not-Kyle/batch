@@ -52,4 +52,14 @@
      > Javascript is the best language out there probably as it handles almost everything (websites, data, ethical hacking, etc) <br />
      > If you master Javascript you can also have a large chance in getting a very high paying job 120K and up <br />
 
+# Languages I know rated from most knowledgable to least knowledgable <br />
+  * Lua / Luau <br />
+  * Java <br />
+  * C++ <br />
+  * Javascript <br />
+  * Markdown <br />
+  * Python <br />
+  * C# <br />
+  * HTML <br />
+
     
