@@ -1,4 +1,4 @@
-getgenv().host = game:GetService'Players'.LocalPlayer
+getgenv().Host = game:GetService'Players'.LocalPlayer
 
-getgenv().light = Instance.new('PointLight',host.Character:WaitForChild('HumanoidRootPart'))
-light.Range = 50 --change this number
+getgenv().Light = Instance.new('PointLight', Host.Character:FindFirstChild'HumanoidRootPart')
+Light.Range = 50 --change this number
