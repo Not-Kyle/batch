@@ -59,3 +59,18 @@ int main() {
 	return 0;
 }
 
+// -- > [[maybe_unused]] < -- \\
+// C++17
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int Z = { 10 };
+	[[maybe_unused]] int Age = { 18 };
+	const double Range = { 4.95 };
+	cout << Z << "\n" << Range;
+	return 0;
+}
+
+// [[maybe_unsed]] is to tell the console that this variable will likely not be used, too many variables without this keyword could bug or cause issues
