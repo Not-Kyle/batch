@@ -46,3 +46,16 @@ int main(){
     double X = 9.2, Y = 13.7, Z = 50.4;
     std::cout << X << std::endl << Y << std::endl << Z;
 }
+
+// -- > Direct and Uniform Initialization < -- \\
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int Z = {10}; // Uniform
+	int X(8); // Direct
+	cout << Z << endl << X;
+	return 0;
+}
+
