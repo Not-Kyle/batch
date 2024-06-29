@@ -47,7 +47,7 @@ int main(){
     std::cout << X << std::endl << Y << std::endl << Z;
 }
 
-// -- > Direct and Uniform Initialization < -- \\
+// -- > Direct and Uniform and Copy Initialization < -- \\
 
 #include <iostream>
 using namespace std;
@@ -55,7 +55,8 @@ using namespace std;
 int main() {
 	int Z = {10}; // Uniform
 	int X(8); // Direct
-	cout << Z << endl << X;
+	itn Y = 5;
+	cout << Z << endl << X << endl << Y;
 	return 0;
 }
 
