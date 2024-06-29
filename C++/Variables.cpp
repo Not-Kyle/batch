@@ -55,7 +55,7 @@ using namespace std;
 int main() {
 	int Z = {10}; // Uniform
 	int X(8); // Direct
-	itn Y = 5;
+	itn Y = 5; // Copy
 	cout << Z << endl << X << endl << Y;
 	return 0;
 }
