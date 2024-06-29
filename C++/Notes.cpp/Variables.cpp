@@ -8,5 +8,3 @@
   B = {2}
   int C; Uninitialized
 */
-
-  
