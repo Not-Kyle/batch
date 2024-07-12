@@ -24,6 +24,9 @@ int main(){
     bool Reloading = false;
     std::cout << Reloading;
 
+    float Sematary = 6.4;
+    std::cout << Sematary;
+
     Age = 17; // Age is now 17, Variables are changable
     std::cout << Age;
 }
@@ -55,7 +58,7 @@ using namespace std;
 int main() {
 	int Z = {10}; // Uniform
 	int X(8); // Direct
-	itn Y = 5; // Copy
+	int Y = 5; // Copy
 	cout << Z << endl << X << endl << Y;
 	return 0;
 }
