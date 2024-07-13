@@ -25,7 +25,8 @@ int main(){
 
 int main(){
   std::cout << "Yes" << std::endl;
-  std::cout << "No"; return 0;
+  std::cout << "No"; 
+  return 0;
 }
 
 // -- > Space statements out like the tab key < -- \\
