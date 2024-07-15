@@ -7,7 +7,7 @@ int returnFive() {
 }
 
 int main() {
-	int uniformFive{ returnFive() };
+    int uniformFive{ returnFive() };
 
 	std::cout << uniformFive;
 	return 0;
