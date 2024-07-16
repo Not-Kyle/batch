@@ -2,7 +2,7 @@
 #include <string>
 #include <cstdlib>
 
-[[maybe_unused]] char colonSpaced[]{": "}, letterF{'F'};
+[[maybe_unused]] char colonSpaced[]{": "}, letterF{'f'};
 std::string hostCommand{ "fuhrer" }, commandAbbreviated{"uhrer"};
 bool isOn{};
 
