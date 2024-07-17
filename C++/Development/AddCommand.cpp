@@ -19,10 +19,26 @@ std::string getUserInput(std::string route) {
 std::string writeFile(std::string fileName, std::string fileText) {
     std::ofstream makeFile{ fileName };
 
-    makeFile << fileText;
-    makeFile.close();
+    if (fileText.empty()) {
+        makeFile << fileText;
+        makeFile.close();
+    }
+    else {
+        makeFile.close();
+    }
 
     return EXIT_SUCCESS;
+}
+
+std::string readFile(std::string fileName) {
+    std::string readFileText{ };
+    std::ifstream getFile{ fileName };
+
+    while (getline(getFile, readFileText)) {
+        return readFileText;
+    }
+
+    getFile.close();
 }
 
 int main() {
@@ -32,13 +48,17 @@ int main() {
         isOn = true;
         if (isOn) {
             std::cout << (char)toupper(letterF) << commandAbbreviated << " is now true";
-            writeFile("reinhard.java",
-                "public class reinhard {\n\t"
+
+            writeFile("Reinhard.java",
+                "public class Reinhard {\n\t"
                     "public static void main(String[] args) {"
                         "\n\t\tSystem.out.println(\"Writing File\");"
                     "\n\t}"
                 "\n}"
             );
+
+            std::string getFilesContent{ readFile("Reinhard.java") };
+            std::cout << getFilesContent;
         }
     }
     else if (getCommand != hostCommand) {
@@ -51,5 +71,3 @@ int main() {
 
     return EXIT_SUCCESS;
 }
-
-//reinhard heydrich
