@@ -5,7 +5,7 @@
 
 [[maybe_unused]] char colonSpaced[]{ ": " }, letterF{ 'f' };
 std::string hostCommand{ "fuhrer" }, commandAbbreviated{ "uhrer" };
-bool isOn{}, isTrue{ true };
+[[maybe_unused]] bool isOn{}, isTrue{ true };
 
 std::string getUserInput(std::string route) {
     std::string addedCommand{};
