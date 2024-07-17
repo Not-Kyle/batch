@@ -8,7 +8,7 @@ public class Yes {
   double d8 = 7.99; // eight bytes
   boolean bit1 = true; // one bit
   char c2 = 'c'; // two bytes
-  String s1 = b1 + "" + b2 + "" + b4 + "" + b8 + "" + f4 + "" + d8 + "" + bit1 + "" + c2);
+  String s1 = b1 + " " + b2 + " " + b4 + " " + b8 + " " + f4 + " " + d8 + " " + bit1 + " " + c2);
   System.out.println(s1);
  }
 }
