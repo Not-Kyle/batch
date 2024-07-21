@@ -51,6 +51,8 @@
      > I've done Javascript in the past and quit because I got back into Lua <br />
      > Javascript is the best language out there probably as it handles almost everything (websites, data, ethical hacking, etc) <br />
      > If you master Javascript you can also have a large chance in getting a very high paying job 120K and up <br />
+   * XML <br />
+     > I've wanted to do XML for a while now as its used in networking <br>
 
 # Languages I know rated from most knowledgable to least knowledgable <br />
   * Lua / Luau <br />
