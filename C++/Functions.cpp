@@ -41,3 +41,24 @@ int main() {
     std::cout   << Math("Multiplication", sqrt(6), 4);
     return		EXIT_SUCCESS;
 }
+
+// Forward Declartion
+
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+
+int five{ 5 }, seven{ 7 };
+
+int orbit(float firstNumber, double secondNumber); // Declaring the function
+
+int main() {
+
+    std::cout   << orbit(five, seven) << std::endl; // Using the function
+    return		EXIT_SUCCESS;
+}
+
+int orbit(float firstNumber, double secondNumber) { // The body of the function
+
+    return round(log(firstNumber) * secondNumber);
+}
