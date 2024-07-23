@@ -62,3 +62,24 @@ int orbit(float firstNumber, double secondNumber) { // The body of the function
 
     return round(log(firstNumber) * secondNumber);
 }
+
+// Or
+
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+
+int five{ 5 }, seven{ 7 };
+
+int orbit(float, double); // You do not have to phrase the names of the arguments yet
+
+int main() {
+
+    std::cout   << orbit(five, seven) << std::endl; // Using the function
+    return		EXIT_SUCCESS;
+}
+
+int orbit(float firstNumber, double secondNumber) { // The body of the function
+
+    return round(log(firstNumber) * secondNumber);
+}
