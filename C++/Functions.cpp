@@ -42,7 +42,7 @@ int main() {
     return		EXIT_SUCCESS;
 }
 
-// Forward Declartion
+// Forward Declartion OR Function Prototype
 
 #include <iostream>
 #include <cstdlib>
