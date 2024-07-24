@@ -3,8 +3,8 @@
 #include <cstdlib>
 #include <fstream>
 
-[[maybe_unused]] char colonSpaced[]{ ": " }, letterF{ 'f' };
-std::string hostCommand{ "fuhrer" }, commandAbbreviated{ "uhrer" };
+[[maybe_unused]] char colonSpaced[]{ ": " }, letterF{ 'f' }, letterW{ 'w' };
+std::string hostCommand{ "writefile" };
 [[maybe_unused]] bool isOn{}, isTrue{ true };
 
 std::string getUserInput(std::string route) {
@@ -19,11 +19,10 @@ std::string getUserInput(std::string route) {
 std::string writeFile(std::string fileName, std::string fileText) {
     std::ofstream makeFile{ fileName };
 
-    if (fileText.empty()) {
+    if (!fileText.empty()) {
         makeFile << fileText;
         makeFile.close();
-    }
-    else {
+    } else {
         makeFile.close();
     }
 
@@ -47,11 +46,11 @@ int main() {
     if (getCommand == hostCommand) {
         isOn = true;
         if (isOn) {
-            std::cout << (char)toupper(letterF) << commandAbbreviated << " is now true";
+            std::cout << (char)toupper(letterW) << "rite" << (char)toupper(letterF) << "ile is now " << std::boolalpha << isOn;
 
             writeFile("Reinhard.java",
-                "public class Reinhard {\n\t"
-                    "public static void main(String[] args) {"
+                "public class Reinhard {"
+                    "\n\tpublic static void main(String[] args) {"
                         "\n\t\tSystem.out.println(\"Writing File\");"
                     "\n\t}"
                 "\n}"
@@ -60,14 +59,13 @@ int main() {
             std::string getFilesContent{ readFile("Reinhard.java") };
             std::cout << getFilesContent;
         }
-    }
-    else if (getCommand != hostCommand) {
+    } else if (getCommand != hostCommand) {
         std::cout << "Not a local command";
         return EXIT_FAILURE;
-    }
-    else {
+    } else {
         return EXIT_FAILURE;
     }
+
 
     return EXIT_SUCCESS;
 }
