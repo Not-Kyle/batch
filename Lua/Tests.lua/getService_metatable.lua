@@ -1,0 +1,13 @@
+local trace = setmetatable({}, {
+    __index = function(self: Instance, ...)
+        local Arguments = {...}
+        rawget(self, Arguments, Arguments[1])
+        
+        return game.GetService(game, Arguments[1]);
+    end
+})
+
+local players = trace.Players;
+local host = players.LocalPlayer;
+
+print(host.DisplayName)
