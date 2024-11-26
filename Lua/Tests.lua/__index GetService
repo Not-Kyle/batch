@@ -1,6 +1,7 @@
 local trace = setmetatable({}, {
-    __index = function(self, ...)
+    __index = function(self: Instance, ...)
         local Arguments = {...}
+        rawset(self, Arguments, Arguments[1])
         
         return game.GetService(game, Arguments[1]);
     end
