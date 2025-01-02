@@ -8,6 +8,7 @@
   * Python <br />
   * HTML <br />
   * C++ <br />
+  * Typescript <br />
 
  So here is a collection of all things random from those langauges! <br />
 
@@ -60,6 +61,7 @@
   * Java <br />
   * Javascript <br />
   * Markdown <br />
+  * Typescript <br />
   * Python <br />
   * C# <br />
   * HTML <br />
