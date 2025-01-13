@@ -8,4 +8,4 @@ function DivideMargin(X, Y) {
 let Result = DivideMargin(SetGrade, Overall).toFixed(2)
 Result = Result.replace('0.', '')
 
-console.log(Result + '%')
+console.log('Grade: ' + Result + '%')
