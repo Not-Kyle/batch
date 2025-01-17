@@ -1,6 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <string>
 
 using namespace std;
 using function = void;
@@ -14,7 +15,8 @@ int main() {
 	cout << "Waiting..." << endl;
 
 	Wait(3);
-	cout << "Success!";
+	cout << "Success!" << endl;
+	cin.get(); // Window would disappear after print?
 
 	return 0;
 }
