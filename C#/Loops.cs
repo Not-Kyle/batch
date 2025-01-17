@@ -1,8 +1,8 @@
-int counter = 0;
-while (counter < 10)
-{
-  Console.WriteLine($"Hello World! The counter is {counter}");
-  counter++;
+int Counter = 0;
+
+while (Counter < 10) {
+    Console.WriteLine($"The Counter is {Counter}");
+    Counter++;
 }
 
 //////////////////////////////////////
