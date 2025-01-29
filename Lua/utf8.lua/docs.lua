@@ -29,7 +29,7 @@ print(utf8.offset(Sure, 2)) -- Returns the byte position of the character mentio
 local SetRandom = tostring(utf8.char(329)..utf8.char(335))
 
 print(utf8.len(SetRandom)..' Output: '..SetRandom)
--- Roblox uses ASCII so usually it would be 4 or 0x06F, 0x2D8, 0x06E, 0x2BC
+-- The string uses ASCII so usually it would be 4 or 0x06F, 0x2D8, 0x06E, 0x2BC
 
 -- Nfc
 
