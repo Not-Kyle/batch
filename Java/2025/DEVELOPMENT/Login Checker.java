@@ -1,5 +1,4 @@
 // Feb 24 2025
-// Saving the data for when I get better over time I can improve
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -30,22 +29,26 @@ public class Main {
             sout(true, "Enter your password: ");
             String passwordInput = userInput.nextLine();
 
-            for (String user: users) {
-                if (user.equals(usernameInput)) {
+            for (String checker: users) {
+                if (checker.equals(usernameInput)) {
                     userFound = true;
-                } else {
-                    sout(false, "Wrong username");
                 }
             }
 
-            for (String user: pass) {
-                if (user.equals(passwordInput) && userFound && !passFound) {
+            for (String checker: pass) {
+                if (checker.equals(passwordInput) && userFound && !passFound) {
                     sout(true, "You are logged in!");
                     passFound = true;
-                } else {
+                } else if (!userFound) {
+                    sout(false, "Wrong username");
+                } else if (!checker.equals(passwordInput)) {
                     sout(false, "Wrong password");
                 }
             }
+        } else if (answer.equals("n") || answer.equals("N")) {
+            sout(false, "No account found!");
+        } else {
+            return;
         }
 
     }
