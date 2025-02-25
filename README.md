@@ -57,8 +57,8 @@
 
 # Languages I know rated from most knowledgable to least knowledgable <br />
   * Lua / Luau <br />
-  * C++ <br />
   * Java <br />
+  * C++ <br />
   * Javascript <br />
   * Markdown <br />
   * Typescript <br />
