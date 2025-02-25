@@ -45,6 +45,8 @@ public class Main {
                     sout(false, "Wrong password");
                 }
             }
+
+            userInput.close();
         } else if (answer.equals("n") || answer.equals("N")) {
             sout(false, "No account found!");
         } else {
