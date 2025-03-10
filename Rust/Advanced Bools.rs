@@ -8,3 +8,12 @@ fn main() {
 
     println!("Is equal: {}", isEqual)
 }
+
+/////
+
+fn main() {
+    let int: i8 = 8;
+
+    let isTrue: bool = (int > 6);
+    println!("Is true: {}", isTrue)
+}
