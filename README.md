@@ -62,6 +62,7 @@
   * Java <br />
   * C++ <br />
   * Javascript <br />
+  * Rust <br />
   * Markdown <br />
   * Typescript <br />
   * Python <br />
