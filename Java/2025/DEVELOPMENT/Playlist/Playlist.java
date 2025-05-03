@@ -20,4 +20,8 @@ public class Playlist {
             System.out.println(index);
         }
     }
+
+    public void deletePlaylist() {
+        this.songs.clear();
+    }
 }
