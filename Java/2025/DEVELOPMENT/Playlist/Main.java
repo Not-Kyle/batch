@@ -8,6 +8,7 @@ public class Main {
         tracks.removeSong("Sematary, King Of The Graveyard");
 
         tracks.printSongs();
+        tracks.deletePlaylist();
     }
 }
 // https://java-programming.mooc.fi/part-6/1-objects-within-objects
