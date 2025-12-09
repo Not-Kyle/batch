@@ -1,5 +1,5 @@
-local math = {};
-math.__index = math
+local Math = {};
+Math.__index = Math
 
 local Operator = {
     ['+'] = function(X: number, I: number) return X + I end,
@@ -8,7 +8,7 @@ local Operator = {
     ['/'] = function(X: number, I: number) return X / I end,
 }
 
-function math.sigma(Start: number, End: number, X: number, Symbol: string)
+function Math.sigma(Start: number, End: number, X: number, Symbol: string)
     if not Operator[Symbol] then return end
 
     local Sum = 0;
@@ -20,4 +20,4 @@ function math.sigma(Start: number, End: number, X: number, Symbol: string)
     return Sum
 end
 
-print(math.sigma(2, 7, 3, '*'))
+print(Math.sigma(2, 7, 3, '*'))
