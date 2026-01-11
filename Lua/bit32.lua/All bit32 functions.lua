@@ -20,16 +20,12 @@ local Bit32 = {
 
 for Index, Value in pairs(Bit32) do
 	if not Index or not Value then return end
-	
-	if typeof(Index) == 'string' and Index == 'Arshift' then
+
+	if Index == 'Arshift' then
 		Value -= 2^32
-		
-		print(string.format('[Name]: %s [Value]: %s', Index, tostring(Value)));
 	end
 
-	if Index ~= 'Arshift' then
-		print(string.format('[Name]: %s [Value]: %s', Index, tostring(Value)));
-	end
+	print(string.format('[Name]: %s [Value]: %s', Index, tostring(Value)));
 end
 
 --[[
