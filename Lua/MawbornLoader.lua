@@ -1,14 +1,8 @@
-if getgenv().Importer then
-    return
-end
-
-getgenv().Importer = true;
-
 local Repository = {
     Domain = 'raw.githubusercontent.com',
     Owner = 'Not-Kyle',
     Name = 'mawborn.xml',
-    Commit = 'a4337ba',
+    Commit = 'e92b774',
 }
 
 local BaseUrl = string.format( 'https://%s/%s/%s/%s/', Repository.Domain, Repository.Owner, Repository.Name, Repository.Commit )
@@ -17,7 +11,7 @@ local Cached = {};
 
 local function RequestHttp(Url: string)
     local Domain = string.match(Url, '^https?://([^/]+)')
-    if Domain ~= Repository.Domain then
+    if not Repository or Domain ~= Repository.Domain then
         return nil, 'Domain not allowed: ' .. tostring(Domain)
     end
 
@@ -90,9 +84,16 @@ function Import(Path: string): any
     return Result
 end
 
-getgenv().Import = Import
+local Version, Error = RequestHttp('https://raw.githubusercontent.com/Not-Kyle/mawborn.xml/master/Version.json')
+
+if not Version then
+    warn('HTTP request failed: ' .. tostring(Error));
+end
+
+getgenv().Import = Import;
+getgenv().GetCurrentVersion = Version;
 getgenv().Mawborn = {
-    Version = '0.9.97';
+    Version = '0.9.98';
     Library = {};
 };
 
