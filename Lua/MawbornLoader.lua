@@ -1,8 +1,14 @@
+if getgenv().Importer then
+    return;
+end
+
+getgenv().Importer = true;
+
 local Repository = {
     Domain = 'raw.githubusercontent.com',
     Owner = 'Not-Kyle',
     Name = 'mawborn.xml',
-    Commit = '6819242',
+    Commit = '26e47f7',
 }
 
 local BaseUrl = string.format( 'https://%s/%s/%s/%s/', Repository.Domain, Repository.Owner, Repository.Name, Repository.Commit )
