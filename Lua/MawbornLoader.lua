@@ -8,7 +8,7 @@ local Repository = {
     Domain = 'raw.githubusercontent.com',
     Owner = 'Not-Kyle',
     Name = 'mawborn.xml',
-    Commit = 'efdf785',
+    Commit = '7ac6b4c',
 }
 
 local BaseUrl = string.format( 'https://%s/%s/%s/%s/', Repository.Domain, Repository.Owner, Repository.Name, Repository.Commit )
