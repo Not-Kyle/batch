@@ -2,173 +2,174 @@ local String = {};
 String.__index = String;
 
 function String.new(Source)
-    return setmetatable({_Value = tostring(Source)}, String);
+	return setmetatable({_Value = tostring(Source)}, String);
 end
 
 function String.valueOf(Source)
-    return tostring(Source);
+	return tostring(Source);
 end
 
 function String.isEmpty(Source)
-    return Source == nil or Source == '';
+	return Source == nil or Source == '';
 end
 
 function String.isBlank(Source)
-    return Source == nil or string.match(Source, '^%s*$') ~= nil;
+	return Source == nil or string.match(Source, '^%s*$') ~= nil;
 end
 
 function String.toLowerCase(Source)
-    return string.lower(tostring(Source));
+	return string.lower(tostring(Source));
 end
 
 function String.toUpperCase(Source)
-    return string.upper(tostring(Source));
+	return string.upper(tostring(Source));
 end
 
 function String.startsWith(Source, Char)
-    Source = tostring(Source);
-    Char = tostring(Char);
+	Source = tostring(Source);
+	Char = tostring(Char);
 
-    return string.sub(Source, 1, #Char) == Char;
+	return string.sub(Source, 1, #Char) == Char;
 end
 
 function String.sentenceCase(Source)
-    Source = tostring(Source);
+	Source = tostring(Source);
 
-    if String.isEmpty(Source) then
-        return '';
-    end
+	if String.isEmpty(Source) then
+		return '';
+	end
 
-    return string.upper(string.sub(Source, 1, 1)) .. string.sub(Source, 2);
+	return string.upper(string.sub(Source, 1, 1)) .. string.sub(Source, 2);
 end
 
 function String.contains(Source, Search)
-    Source = tostring(Source);
-    Search = tostring(Search);
+	Source = tostring(Source);
+	Search = tostring(Search);
 
-    return string.find(Source, Search, 1, true) ~= nil;
+	return string.find(Source, Search, 1, true) ~= nil;
 end
 
 function String.trim(Source)
-    Source = tostring(Source);
+	Source = tostring(Source);
 
-    return string.match(Source, '^%s*(.-)%s*$');
+	return string.match(Source, '^%s*(.-)%s*$');
 end
 
 function String.join(Char, Source)
-    assert(type(Source) == 'table', 'String.join expects a table');
+	assert(type(Source) == 'table', 'String.join expects a table');
 
-    return table.concat(Source, Char);
+	return table.concat(Source, Char);
 end
 
 function String.ulength(Source)
-    return utf8.len(tostring(Source));
+	return utf8.len(tostring(Source));
 end
 
 function String.length(Source)
-    return string.len(tostring(Source));
+	return string.len(tostring(Source));
 end
 
 function String.charAt(Source, Index)
-    Source = tostring(Source);
+	Source = tostring(Source);
 
-    return string.sub(Source, Index, Index);
+	return string.sub(Source, Index, Index);
 end
 
 function String.matches(Source1, Source2)
-    return tostring(Source1) == tostring(Source2);
+	return tostring(Source1) == tostring(Source2);
 end
 
 function String.replace(Source, Search, Replace)
-    Source = tostring(Source);
+	Source = tostring(Source);
 
-    return string.gsub(Source, Search, Replace, 1);
+	return string.gsub(Source, Search, Replace, 1);
 end
 
 ----------------------------------------------------
 -- // Namecalls
 ----------------------------------------------------
+
 function String:value()
-    return self._Value;
+	return self._Value;
 end
 
 function String:set(Source)
-    self._Value = tostring(Source);
+	self._Value = tostring(Source);
 
-    return self;
+	return self;
 end
 
-function String:valueOf()
-    return String.valueOf(self._Value);
+function String:_valueOf()
+	return String.valueOf(self._Value);
 end
 
-function String:toLowerCase()
-    self._Value = String.toLowerCase(self._Value);
+function String:_toLowerCase()
+	self._Value = String.toLowerCase(self._Value);
 
-    return self;
+	return self;
 end
 
-function String:toUpperCase()
-    self._Value = String.toUpperCase(self._Value);
+function String:_toUpperCase()
+	self._Value = String.toUpperCase(self._Value);
 
-    return self;
+	return self;
 end
 
-function String:trim()
-    self._Value = String.trim(self._Value);
+function String:_trim()
+	self._Value = String.trim(self._Value);
 
-    return self;
+	return self;
 end
 
-function String:sentenceCase()
-    self._Value = String.sentenceCase(self._Value);
+function String:_sentenceCase()
+	self._Value = String.sentenceCase(self._Value);
 
-    return self;
+	return self;
 end
 
-function String:replace(Search, Replace)
-    self._Value = String.replace(self._Value, Search, Replace);
-	
-    return self;
+function String:_replace(Search, Replace)
+	self._Value = String.replace(self._Value, Search, Replace);
+
+	return self;
 end
 
-function String:charAt(Index)
-    return string.sub(self._Value, Index, Index);
+function String:_charAt(Index)
+	return string.sub(self._Value, Index, Index);
 end
 
-function String:isEmpty()
-    return String.isEmpty(self._Value);
+function String:_isEmpty()
+	return String.isEmpty(self._Value);
 end
 
-function String:isBlank()
-    return String.isBlank(self._Value);
+function String:_isBlank()
+	return String.isBlank(self._Value);
 end
 
-function String:contains(Search)
-    return String.contains(self._Value, Search);
+function String:_contains(Search)
+	return String.contains(self._Value, Search);
 end
 
-function String:matches(Source)
+function String:_matches(Source)
 	return String.matches(self._Value, Source);
 end
 
-function String:length()
-    return String.length(self._Value);
+function String:_length()
+	return String.length(self._Value);
 end
 
-function String:ulength()
-    return String.ulength(self._Value);
+function String:_ulength()
+	return String.ulength(self._Value);
 end
 
-function String:startsWith(Source)
+function String:_startsWith(Source)
 	return String.startsWith(self._Value, Source);
 end
 
-function String:join(Char)
-    assert(type(self._Value) == 'table', 'String:join expects _Value to be a table');
-	
-    self._Value = table.concat(self._Value, Char);
-    return self;
+function String:_join(Char)
+	assert(type(self._Value) == 'table', 'String:join expects _Value to be a table');
+
+	self._Value = table.concat(self._Value, Char);
+	return self;
 end
 
 -- // ValueOf
@@ -189,7 +190,7 @@ end
 
 -- // SentanceCase
 
-print('[Name]: String.sentancCase ' .. String.sentanceCase('cory')); -- Returns Cory instead of cory
+print('[Name]: String.sentancCase ' .. String.sentenceCase('cory')); -- Returns Cory instead of cory
 
 -- // Contains
 
@@ -223,3 +224,8 @@ end
 -- // Replace
 
 print('[Name]: String.replace ' .. String.replace('Cory', 'C', 'Z'))
+
+-- // NAMECALLS
+
+local example = String.new('cory');
+print('[SentenceCase]: ' .. example:_sentenceCase():value());
