@@ -1,20 +1,90 @@
 local String = {};
+local StringMetatable = {
+    __metatable = 'Protected';
+};
+
+StringMetatable.__index = String;
+
+StringMetatable.__concat = function(Source1, Source2)
+	local A = (type(Source1) == 'table' and Source1._Value) or tostring(Source1);
+	local B = (type(Source2) == 'table' and Source2._Value) or tostring(Source2);
+
+	return String.new(A .. B);
+end
+
+StringMetatable.__eq = function(Source1, Source2)
+	local A = Source1._Value;
+	local B = (type(Source2) == 'table' and Source2._Value) or tostring(Source2);
+
+	return A == B;
+end
+
+StringMetatable.__lt = function(Source1, Source2)
+	local A = (type(Source1) == 'table' and Source1._Value) or tostring(Source1);
+	local B = (type(Source2) == 'table' and Source2._Value) or tostring(Source2);
+
+	return A < B;
+end
+
+StringMetatable.__le = function(Source1, Source2)
+	local A = (type(Source1) == 'table' and Source1._Value) or tostring(Source1);
+	local B = (type(Source2) == 'table' and Source2._Value) or tostring(Source2);
+
+	return A <= B;
+end
+
+StringMetatable.__pow = function(Source1, Source2)
+	local A = (type(Source1) == 'table' and tonumber(Source1._Value)) or tonumber(Source1);
+	local B = (type(Source2) == 'table' and tonumber(Source2._Value)) or tonumber(Source2);
+	assert(A and B, 'Arg 1, attempt to perform arithmetic (pow) on non-numeric value');
+
+	return A^B;
+end
+
+StringMetatable.__add = function(Source1, Source2)
+	local A = (type(Source1) == 'table' and tonumber(Source1._Value)) or tonumber(Source1);
+	local B = (type(Source2) == 'table' and tonumber(Source2._Value)) or tonumber(Source2);
+	assert(A and B, 'Arg 1, attempt to perform arithmetic (add) on non-numeric value');
+
+	return A + B;
+end
+
+StringMetatable.__sub = function(Source1, Source2)
+	local A = (type(Source1) == 'table' and tonumber(Source1._Value)) or tonumber(Source1);
+	local B = (type(Source2) == 'table' and tonumber(Source2._Value)) or tonumber(Source2);
+	assert(A and B, 'Arg 1, attempt to perform arithmetic (sub) on non-numeric value');
+
+	return A - B;
+end
+
+StringMetatable.__mul = function(Source1, Source2)
+	local A = (type(Source1) == 'table' and tonumber(Source1._Value)) or tonumber(Source1);
+	local B = (type(Source2) == 'table' and tonumber(Source2._Value)) or tonumber(Source2);
+	assert(A and B, 'Arg 1, attempt to perform arithmetic (mul) on non-numeric value');
+
+	return A * B;
+end
+
+StringMetatable.__div = function(Source1, Source2)
+	local A = (type(Source1) == 'table' and tonumber(Source1._Value)) or tonumber(Source1);
+	local B = (type(Source2) == 'table' and tonumber(Source2._Value)) or tonumber(Source2);
+	assert(A and B, 'Arg 1, attempt to perform arithmetic (div) on non-numeric value');
+
+	return A / B;
+end
+
+StringMetatable.__unm = function(self)
+    local A = tonumber(self._Value);
+    assert(A, 'Arg 1, attempt to perform arithmetic (unary minus) on a non-numeric value');
+
+    return -A;
+end
+
+StringMetatable.__len = function(self) return #self._Value; end;
+StringMetatable.__tostring = function(self) return self._Value; end;
 
 function String.new(Source)
-	return setmetatable({_Value = tostring(Source)}, {
-		__index = String,
-
-		__concat = function(Source1, Source2)
-			local A = tostring(Source1);
-			local B = tostring(Source2);
-
-			return String.new(A .. B);
-		end,
-
-		__tostring = function(self)
-			return self._Value;
-		end,
-	});
+	return setmetatable({_Value = tostring(Source)}, StringMetatable);
 end
 
 function String.valueOf(Source)
@@ -102,7 +172,11 @@ end
 ----------------------------------------------------
 
 function String:value()
-	return self._Value;
+    if type(self._Value) == 'string' then
+        return self._Value
+    end
+    
+    return self
 end
 
 function String:set(Source)
@@ -111,133 +185,75 @@ function String:set(Source)
 	return self;
 end
 
-function String:_valueOf()
+function String:toString()
 	return String.valueOf(self._Value);
 end
 
-function String:_toLowerCase()
+function String:toLower()
 	self._Value = String.toLowerCase(self._Value);
 
 	return self;
 end
 
-function String:_toUpperCase()
+function String:toUpper()
 	self._Value = String.toUpperCase(self._Value);
 
 	return self;
 end
 
-function String:_trim()
+function String:trimString()
 	self._Value = String.trim(self._Value);
 
 	return self;
 end
 
-function String:_sentenceCase()
+function String:capitalizeFirst()
 	self._Value = String.sentenceCase(self._Value);
 
 	return self;
 end
 
-function String:_replace(Search, Replace)
+function String:replaceChar(Search, Replace)
 	self._Value = String.replace(self._Value, Search, Replace);
 
 	return self;
 end
 
-function String:_charAt(Index)
+function String:codePointAt(Index)
 	return string.sub(self._Value, Index, Index);
 end
 
-function String:_isEmpty()
+function String:isClear()
 	return String.isEmpty(self._Value);
 end
 
-function String:_isBlank()
+function String:isVoid()
 	return String.isBlank(self._Value);
 end
 
-function String:_contains(Search)
+function String:searchFor(Search)
 	return String.contains(self._Value, Search);
 end
 
-function String:_matches(Source)
+function String:equals(Source)
 	return String.matches(self._Value, Source);
 end
 
-function String:_length()
+function String:getLength()
 	return String.length(self._Value);
 end
 
-function String:_ulength()
+function String:getUnilength()
 	return String.ulength(self._Value);
 end
 
-function String:_startsWith(Source)
+function String:beginsWith(Source)
 	return String.startsWith(self._Value, Source);
 end
 
-function String:_join(Char)
+function String:concatWithTable(Char)
 	assert(type(self._Value) == 'table', 'String:join expects _Value to be a table');
 
 	self._Value = table.concat(self._Value, Char);
 	return self;
 end
-
--- // ValueOf
-
-print('[Name]: String.valeOf ' .. String.valueOf(2))
-
--- // Empty
-
-if not String.isEmpty('Cory') then
-	print('[Name]: String.isEmpty ' .. 'Not Empty')
-end
-
--- // StartsWith
-
-if String.startsWith('Cory', 'C') then
-	print('[Name]: String.startsWith ' .. 'String does start with C')
-end
-
--- // SentanceCase
-
-print('[Name]: String.sentancCase ' .. String.sentenceCase('cory')); -- Returns Cory instead of cory
-
--- // Contains
-
-if String.contains('Cory', 'r') then
-	print('[Name]: String.contains ' .. 'Does contain R');
-end
-
--- // Trim
-
-print('[Name]: String.trim ' .. String.trim('     CORY    ')) -- Removes whitespace
-
--- // Join
-
-print('[Name]: String.join ' .. String.join(', ', {'Cory', 'You', 'Me'})) -- Returns Cory, You, Me
-
--- // Ulength (UTF8 Length)
-
-print('[Name]: String.ulength ' .. String.ulength('🥜yo')) -- Returns 3
-print('[Name]: String.length ' .. String.length('🥜yo')) -- Returns 6
-
--- // Char At
-
-print('[Name]: String.charAt ' .. String.charAt('Cory', 3)) -- Returns r, you indexed 3 which is r
-
--- // Matches
-
-if String.matches('Cory', 'Cory') then
-	print('[Name]: String.matches ' .. 'It does match')
-end
-
--- // Replace
-
-print('[Name]: String.replace ' .. String.replace('Cory', 'C', 'Z'))
-
--- // NAMECALLS
-
-local example = String.new('cory');
-print('[Namecall: SentenceCase]: ' .. example:_sentenceCase());
