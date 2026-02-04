@@ -1,63 +1,174 @@
 local String = {};
+String.__index = String;
+
+function String.new(Source)
+    return setmetatable({_Value = tostring(Source)}, String);
+end
 
 function String.valueOf(Source)
-	return tostring(Source);
+    return tostring(Source);
 end
 
 function String.isEmpty(Source)
-	return Source == '';
+    return Source == nil or Source == '';
+end
+
+function String.isBlank(Source)
+    return Source == nil or string.match(Source, '^%s*$') ~= nil;
 end
 
 function String.toLowerCase(Source)
-	return string.lower(Source);
+    return string.lower(tostring(Source));
 end
 
 function String.toUpperCase(Source)
-	return string.upper(Source);
+    return string.upper(tostring(Source));
 end
 
 function String.startsWith(Source, Char)
-	return string.sub(Source, 1, 1) == Char;
+    Source = tostring(Source);
+    Char = tostring(Char);
+
+    return string.sub(Source, 1, #Char) == Char;
 end
 
-function String.sentanceCase(Source)
-	return string.upper(string.sub(Source, 1, 1)) .. string.sub(Source, 2);
+function String.sentenceCase(Source)
+    Source = tostring(Source);
+
+    if String.isEmpty(Source) then
+        return '';
+    end
+
+    return string.upper(string.sub(Source, 1, 1)) .. string.sub(Source, 2);
 end
 
 function String.contains(Source, Search)
-	return string.find(Source, Search, 1, true)
+    Source = tostring(Source);
+    Search = tostring(Search);
+
+    return string.find(Source, Search, 1, true) ~= nil;
 end
 
 function String.trim(Source)
-	return string.match(Source, '^%s*(.-)%s*$');
+    Source = tostring(Source);
+
+    return string.match(Source, '^%s*(.-)%s*$');
 end
 
 function String.join(Char, Source)
-	if type(Source) ~= 'table' then
-		error('Invalid type on argument 2, must be a table')
-	end
+    assert(type(Source) == 'table', 'String.join expects a table');
 
-	return table.concat(Source, Char)
+    return table.concat(Source, Char);
 end
 
 function String.ulength(Source)
-	return utf8.len(Source);
+    return utf8.len(tostring(Source));
 end
 
 function String.length(Source)
-	return string.len(Source);
+    return string.len(tostring(Source));
 end
 
 function String.charAt(Source, Index)
-	return string.sub(Source, Index, Index);
+    Source = tostring(Source);
+
+    return string.sub(Source, Index, Index);
 end
 
 function String.matches(Source1, Source2)
-	return Source1 == Source2
+    return tostring(Source1) == tostring(Source2);
 end
 
 function String.replace(Source, Search, Replace)
-	return (string.gsub(Source, Search, Replace, 1));
+    Source = tostring(Source);
+
+    return string.gsub(Source, Search, Replace, 1);
+end
+
+----------------------------------------------------
+-- // Namecalls
+----------------------------------------------------
+function String:value()
+    return self._Value;
+end
+
+function String:set(Source)
+    self._Value = tostring(Source);
+
+    return self;
+end
+
+function String:valueOf()
+    return String.valueOf(self._Value);
+end
+
+function String:toLowerCase()
+    self._Value = String.toLowerCase(self._Value);
+
+    return self;
+end
+
+function String:toUpperCase()
+    self._Value = String.toUpperCase(self._Value);
+
+    return self;
+end
+
+function String:trim()
+    self._Value = String.trim(self._Value);
+
+    return self;
+end
+
+function String:sentenceCase()
+    self._Value = String.sentenceCase(self._Value);
+
+    return self;
+end
+
+function String:replace(Search, Replace)
+    self._Value = String.replace(self._Value, Search, Replace);
+	
+    return self;
+end
+
+function String:charAt(Index)
+    return string.sub(self._Value, Index, Index);
+end
+
+function String:isEmpty()
+    return String.isEmpty(self._Value);
+end
+
+function String:isBlank()
+    return String.isBlank(self._Value);
+end
+
+function String:contains(Search)
+    return String.contains(self._Value, Search);
+end
+
+function String:matches(Source)
+	return String.matches(self._Value, Source);
+end
+
+function String:length()
+    return String.length(self._Value);
+end
+
+function String:ulength()
+    return String.ulength(self._Value);
+end
+
+function String:startsWith(Source)
+	return String.startsWith(self._Value, Source);
+end
+
+function String:join(Char)
+    assert(type(self._Value) == 'table', 'String:join expects _Value to be a table');
+	
+    self._Value = table.concat(self._Value, Char);
+    return self;
 end
 
 -- // ValueOf
