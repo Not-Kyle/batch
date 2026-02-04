@@ -1,87 +1,179 @@
+-- https://www.lua.org/manual/5.4/manual.html
+
 local String = {};
 local StringMetatable = {
     __metatable = 'Protected';
+    __index = String;
+
+    --// __mode = 'v'; -- Weak value
 };
 
-StringMetatable.__index = String;
+local function checkNumber(Source)
+    return (type(Source) == 'table' and tonumber(Source._Value)) or tonumber(Source);
+end
+
+local function checkString(Source)
+    return (type(Source) == 'table' and Source._Value) or tostring(Source);
+end
 
 StringMetatable.__concat = function(Source1, Source2)
-	local A = (type(Source1) == 'table' and Source1._Value) or tostring(Source1);
-	local B = (type(Source2) == 'table' and Source2._Value) or tostring(Source2);
+	local A = checkString(Source1);
+	local B = checkString(Source2);
 
 	return String.new(A .. B);
 end
 
 StringMetatable.__eq = function(Source1, Source2)
 	local A = Source1._Value;
-	local B = (type(Source2) == 'table' and Source2._Value) or tostring(Source2);
+	local B = checkString(Source2);
 
 	return A == B;
 end
 
 StringMetatable.__lt = function(Source1, Source2)
-	local A = (type(Source1) == 'table' and Source1._Value) or tostring(Source1);
-	local B = (type(Source2) == 'table' and Source2._Value) or tostring(Source2);
+	local A = checkString(Source1);
+	local B = checkString(Source2);
 
 	return A < B;
 end
 
 StringMetatable.__le = function(Source1, Source2)
-	local A = (type(Source1) == 'table' and Source1._Value) or tostring(Source1);
-	local B = (type(Source2) == 'table' and Source2._Value) or tostring(Source2);
+	local A = checkString(Source1);
+	local B = checkString(Source2);
 
 	return A <= B;
 end
 
 StringMetatable.__pow = function(Source1, Source2)
-	local A = (type(Source1) == 'table' and tonumber(Source1._Value)) or tonumber(Source1);
-	local B = (type(Source2) == 'table' and tonumber(Source2._Value)) or tonumber(Source2);
-	assert(A and B, 'Arg 1, attempt to perform arithmetic (pow) on non-numeric value');
+	local A = checkNumber(Source1);
+	local B = checkNumber(Source2);
 
-	return A^B;
+	assert(A and B, 'attempt to perform arithmetic (pow) on non-numeric value');
+
+	return String.new(A^B);
 end
 
 StringMetatable.__add = function(Source1, Source2)
-	local A = (type(Source1) == 'table' and tonumber(Source1._Value)) or tonumber(Source1);
-	local B = (type(Source2) == 'table' and tonumber(Source2._Value)) or tonumber(Source2);
-	assert(A and B, 'Arg 1, attempt to perform arithmetic (add) on non-numeric value');
+	local A = checkNumber(Source1);
+	local B = checkNumber(Source2);
 
-	return A + B;
+	assert(A and B, 'attempt to perform arithmetic (add) on non-numeric value');
+
+	return String.new(A + B);
 end
 
 StringMetatable.__sub = function(Source1, Source2)
-	local A = (type(Source1) == 'table' and tonumber(Source1._Value)) or tonumber(Source1);
-	local B = (type(Source2) == 'table' and tonumber(Source2._Value)) or tonumber(Source2);
-	assert(A and B, 'Arg 1, attempt to perform arithmetic (sub) on non-numeric value');
+	local A = checkNumber(Source1);
+	local B = checkNumber(Source2);
 
-	return A - B;
+	assert(A and B, 'attempt to perform arithmetic (sub) on non-numeric value');
+
+	return String.new(A - B);
 end
 
 StringMetatable.__mul = function(Source1, Source2)
-	local A = (type(Source1) == 'table' and tonumber(Source1._Value)) or tonumber(Source1);
-	local B = (type(Source2) == 'table' and tonumber(Source2._Value)) or tonumber(Source2);
-	assert(A and B, 'Arg 1, attempt to perform arithmetic (mul) on non-numeric value');
+	local A = checkNumber(Source1);
+	local B = checkNumber(Source2);
 
-	return A * B;
+	assert(A and B, 'attempt to perform arithmetic (mul) on non-numeric value');
+
+	return String.new(A * B);
 end
 
 StringMetatable.__div = function(Source1, Source2)
-	local A = (type(Source1) == 'table' and tonumber(Source1._Value)) or tonumber(Source1);
-	local B = (type(Source2) == 'table' and tonumber(Source2._Value)) or tonumber(Source2);
-	assert(A and B, 'Arg 1, attempt to perform arithmetic (div) on non-numeric value');
+	local A = checkNumber(Source1);
+	local B = checkNumber(Source2);
 
-	return A / B;
+	assert(A and B, 'attempt to perform arithmetic (div) on non-numeric value');
+
+	return String.new(A / B);
+end
+
+StringMetatable.__idiv = function(Source1, Source2)
+	local A = checkNumber(Source1);
+	local B = checkNumber(Source2);
+
+	assert(A and B, 'attempt to perform arithmetic (idiv) on non-numeric value');
+
+	return String.new(math.floor(A / B));
+end
+
+StringMetatable.__mod = function(Source1, Source2)
+	local A = checkNumber(Source1);
+	local B = checkNumber(Source2);
+
+	assert(A and B, 'attempt to perform arithmetic (mod) on non-numeric value');
+
+	return String.new(A % B);
 end
 
 StringMetatable.__unm = function(self)
     local A = tonumber(self._Value);
-    assert(A, 'Arg 1, attempt to perform arithmetic (unary minus) on a non-numeric value');
 
-    return -A;
+    assert(A, 'attempt to perform arithmetic (unary minus) on a non-numeric value');
+
+    return String.new(-A);
 end
 
 StringMetatable.__len = function(self) return #self._Value; end;
 StringMetatable.__tostring = function(self) return self._Value; end;
+
+-- // Binary Support
+
+StringMetatable.__bor = function(Source1, Source2)
+    local A = checkNumber(Source1);
+	local B = checkNumber(Source2);
+
+	assert(A and B, 'attempt to perform bitwise OR on non-numeric value');
+
+    return String.new(bit32.bor(A, B));
+end
+
+StringMetatable.__bxor = function(Source1, Source2)
+    local A = checkNumber(Source1);
+	local B = checkNumber(Source2);
+
+	assert(A and B, 'attempt to perform bitwise XOR on non-numeric value');
+
+    return String.new(bit32.bxor(A, B));
+end
+
+StringMetatable.__bnot = function(Source1)
+    local A = checkNumber(Source1);
+
+	assert(A, 'attempt to perform bitwise NOT on non-numeric value');
+
+    return String.new(bit32.bnot(A));
+end
+
+StringMetatable.__band = function(Source1, Source2)
+    local A = checkNumber(Source1);
+	local B = checkNumber(Source2);
+
+	assert(A and B, 'attempt to perform bitwise AND on non-numeric value');
+
+    return String.new(bit32.band(A, B));
+end
+
+StringMetatable.__shr = function(Source1, Source2)
+    local A = checkNumber(Source1);
+	local B = checkNumber(Source2);
+
+	assert(A and B, 'attempt to perform bitwise RSHIFT on non-numeric value');
+
+    return String.new(bit32.rshift(A, B));
+end
+
+StringMetatable.__shl = function(Source1, Source2)
+    local A = checkNumber(Source1);
+	local B = checkNumber(Source2);
+
+	assert(A and B, 'attempt to perform bitwise LSHIFT on non-numeric value');
+
+    return String.new(bit32.lshift(A, B));
+end
+
+-- // End of Metamethods
 
 function String.new(Source)
 	return setmetatable({_Value = tostring(Source)}, StringMetatable);
