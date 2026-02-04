@@ -1,8 +1,20 @@
 local String = {};
-String.__index = String;
 
 function String.new(Source)
-	return setmetatable({_Value = tostring(Source)}, String);
+	return setmetatable({_Value = tostring(Source)}, {
+		__index = String,
+
+		__concat = function(Source1, Source2)
+			local A = tostring(Source1);
+			local B = tostring(Source2);
+
+			return String.new(A .. B);
+		end,
+
+		__tostring = function(self)
+			return self._Value;
+		end,
+	});
 end
 
 function String.valueOf(Source)
@@ -228,4 +240,4 @@ print('[Name]: String.replace ' .. String.replace('Cory', 'C', 'Z'))
 -- // NAMECALLS
 
 local example = String.new('cory');
-print('[SentenceCase]: ' .. example:_sentenceCase():value());
+print('[Namecall: SentenceCase]: ' .. example:_sentenceCase());
