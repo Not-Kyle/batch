@@ -243,7 +243,7 @@ function String:getLength()
 	return String.length(self._Value);
 end
 
-function String:getUnilength()
+function String:getUniLength()
 	return String.ulength(self._Value);
 end
 
