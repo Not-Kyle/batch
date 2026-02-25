@@ -24,7 +24,7 @@
  * The C compiler thinks you know what you're doing, so it will let you return that pointer and your program will crash when you try to read that "garbage" memory.
  *
  * In simple terms.
- * The Stack: A region of memory managed by the CPU using a Stack Pointer.
+ * The Stack: A LFIO (Last-In-First-Out) region of memory managed by the CPU using a Stack Pointer.
  * Pushing: Occurs when a function is called, the space is reserved for local variables and the return address.
  * Popping: Occurs when a function returns, the Stack Pointer moves back effectively deleting the local variables by making that memory available to overwrite.
  *
