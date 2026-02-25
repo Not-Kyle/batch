@@ -10,7 +10,7 @@ bool checkEqual(int x, int y) {
     }
 
     return isEqual;
-}
+} // This could be scaled down with a ternary operator but here just for show.
 
 int main(void) {
     bool checker = checkEqual(x, y); // Common knowledge but without this, the print functions would call the function twice leading to redundancy.
