@@ -13,7 +13,8 @@ bool checkEqual(int x, int y) {
 }
 
 int main(void) {
-    bool checker = checkEqual(x, y);
+    bool checker = checkEqual(x, y); // Common knowledge but without this, the print functions would call the function twice leading to redundancy.
+    
     printf("Checker: %d\n", checker);
     printf("Checker String: %s", checker ? "true" : "false");
     return 0;
