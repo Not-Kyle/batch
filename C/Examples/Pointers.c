@@ -15,11 +15,11 @@ int main() {
     if (pSecondYear != NULL) {
         printf("Year: %d\n", currentYear);
         printf("Heap Year: %d at Address: %p\n", *pSecondYear, pSecondYear);
-        
+
         free(pSecondYear); // Free the heap memory
         pSecondYear = NULL; // Good practice to prevent "dangling pointers"
     }
-    
+
     return 0;
 }
 
@@ -29,7 +29,7 @@ void changeInteger(int *val) {
     /*
      * Must do (*ptr)++, using the brackets then ptr then plus one.
      *The complier sees the brackets first, goes inside and sees you're calling the ptr; adds one.
-     * Without it, you're doing +1 to the memory address which would leak to memory leaks.
+     * Without it, you're doing +1 to the memory address which would crash the program (Edit)
     */
 }
 
