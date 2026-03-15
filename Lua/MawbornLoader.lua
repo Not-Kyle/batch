@@ -98,7 +98,7 @@ local function Import(Path: string)
 end
 
 getgenv().Mawborn = {
-    Version = '0.9.98';
+    Version = '0.9.99';
     Library = {};
 };
 
