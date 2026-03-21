@@ -20,7 +20,7 @@ local Repository = {
     Domain = 'raw.githubusercontent.com',
     Owner = 'Not-Kyle',
     Name = 'mawborn.xml',
-    Commit = 'cdeb691', -- You can run any stable version of Mawborn!
+    Commit = '5183d34', -- You can run any stable version of Mawborn!
 }
 
 local BaseUrl = Format('https://%s/%s/%s/%s/', Repository.Domain, Repository.Owner, Repository.Name, Repository.Commit)
@@ -102,6 +102,7 @@ getgenv().Mawborn = {
     Library = {};
 };
 
+Import('Utils/Library/Ignores.lua')
 Import('src/Source.lua');
 
 return Import;
