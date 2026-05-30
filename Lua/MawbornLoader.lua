@@ -20,7 +20,7 @@ local Repository = {
     Domain = 'raw.githubusercontent.com',
     Owner = 'Not-Kyle',
     Name = 'mawborn.xml',
-    Commit = 'f28d8f9', -- You can run any stable version of Mawborn!
+    Commit = '14132aa', -- You can run any stable version of Mawborn!
 }
 
 local BaseUrl = Format('https://%s/%s/%s/%s/', Repository.Domain, Repository.Owner, Repository.Name, Repository.Commit)
@@ -98,7 +98,7 @@ local function Import(Path: string)
 end
 
 getgenv().Mawborn = {
-    Version = '1.0.0';
+    Version = '1.0.1A';
     Library = {};
 };
 
